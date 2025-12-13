@@ -101,6 +101,20 @@ export default function App() {
 
   // Slide Components
   const slides = [
+        // Live Workflow Simulation Slide
+        <div className="w-full flex flex-col items-center justify-center">
+          <h2 className="slide-title mb-12">How the Workflow Runs</h2>
+          <div className="workflow-sim-container">
+            <div className="workflow-node trigger">Trigger</div>
+            <div className="workflow-line line1"></div>
+            <div className="workflow-node filter">Filter</div>
+            <div className="workflow-line line2"></div>
+            <div className="workflow-node ai">AI Agent</div>
+            <div className="workflow-line line3"></div>
+            <div className="workflow-node action">Action</div>
+          </div>
+          <p className="mt-10 text-slate-400 text-lg text-center max-w-2xl">This simulation shows how data flows through an automation pipeline: a trigger starts the process, a filter checks conditions, an AI agent processes the data, and an action completes the workflow. Each step is revealed in sequence, just like a real workflow in Zapier or n8n.</p>
+        </div>,
     // Slide 1: Title
     <div className="title-layout w-full max-w-4xl text-center">
       <div className="tagline">Expert Workshop | Chandigarh University</div>
@@ -176,60 +190,64 @@ export default function App() {
     // Slide 5: Workflow Tools
     <div className="w-full">
       <h2 className="slide-title">Workflow Tools</h2>
-      <div className="two-column tiled">
-        <div>
-          <h3 className="text-red-300">Zapier</h3>
-          <p>Good for simple tasks, no setup</p>
-          <ul className="tech-list mt-5">
-            <li>Connects Gmail to Slack, or Forms to Excel.</li>
-            <li>No coding required. Visual interface.</li>
-            <li>Simple "If this, then that" tasks.</li>
-          </ul>
+        <div className="two-column tiled">
+          <a href="https://zapier.com/" target="_blank" rel="noopener noreferrer" className="tool-card-link">
+            <div>
+              <h3 className="text-red-300">Zapier</h3>
+              <p>Good for simple tasks, no setup</p>
+              <ul className="tech-list mt-5">
+                <li>Connects Gmail to Slack, or Forms to Excel.</li>
+                <li>No coding required. Visual interface.</li>
+                <li>Simple "If this, then that" tasks.</li>
+              </ul>
+            </div>
+          </a>
+          <a href="https://n8n.io/" target="_blank" rel="noopener noreferrer" className="tool-card-link">
+            <div>
+              <h3 className="text-blue-400">n8n</h3>
+              <p>Good for research data, more control</p>
+              <ul className="tech-list mt-5">
+                <li>Free and private (can run on University servers).</li>
+                <li>Handles research data with more options.</li>
+                <li>Useful for advanced workflows.</li>
+              </ul>
+            </div>
+          </a>
         </div>
-        <div>
-          <h3 className="text-blue-400">n8n</h3>
-          <p>Good for research data, more control</p>
-          <ul className="tech-list mt-5">
-            <li>Free and private (can run on University servers).</li>
-            <li>Handles research data with more options.</li>
-            <li>Useful for advanced workflows.</li>
-          </ul>
-        </div>
-      </div>
     </div>,
 
     // Slide 6: Tools for Reading and Writing Papers
     <div className="w-full">
       <h2 className="slide-title">Tools for Reading and Writing Papers</h2>
       <div className="tool-grid">
-        <div className="tool-card">
+        <a href="https://consensus.app/" target="_blank" rel="noopener noreferrer" className="tool-card tool-card-link">
           <div className="flex justify-center mb-4">
             <Quote size={30} className="text-violet-500" />
           </div>
           <h4>Consensus</h4>
           <p>Helps find real papers</p>
-        </div>
-        <div className="tool-card">
+        </a>
+        <a href="https://scite.ai/" target="_blank" rel="noopener noreferrer" className="tool-card tool-card-link">
           <div className="flex justify-center mb-4">
             <CheckCheck size={30} className="text-emerald-500" />
           </div>
           <h4>Scite.ai</h4>
           <p>Checks citation meaning</p>
-        </div>
-        <div className="tool-card">
+        </a>
+        <a href="https://jenni.ai/" target="_blank" rel="noopener noreferrer" className="tool-card tool-card-link">
           <div className="flex justify-center mb-4">
             <PenTool size={30} className="text-amber-500" />
           </div>
           <h4>Jenni</h4>
           <p>Helps expand drafts</p>
-        </div>
-        <div className="tool-card">
+        </a>
+        <a href="https://paperpal.com/" target="_blank" rel="noopener noreferrer" className="tool-card tool-card-link">
           <div className="flex justify-center mb-4">
             <Languages size={30} className="text-red-500" />
           </div>
           <h4>Paperpal</h4>
           <p>Improves academic language</p>
-        </div>
+        </a>
       </div>
     </div>,
 
@@ -579,6 +597,61 @@ export default function App() {
   return (
     <div className="min-h-screen bg-black text-white font-sans flex items-center justify-center overflow-hidden relative">
       <style>{`
+                /* Workflow Simulation Slide Styles */
+                .workflow-sim-container {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  gap: 0px;
+                  position: relative;
+                  height: 120px;
+                  margin-top: 40px;
+                }
+                .workflow-node {
+                  width: 120px;
+                  height: 120px;
+                  border-radius: 50%;
+                  background: linear-gradient(135deg, #1e40af 0%, #8b5cf6 100%);
+                  color: #fff;
+                  font-size: 1.5rem;
+                  font-weight: 700;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  box-shadow: 0 8px 32px 0 rgba(91, 33, 182, 0.25);
+                  opacity: 0;
+                  transform: translateY(40px) scale(0.9);
+                  animation: nodeAppear 0.5s forwards;
+                }
+                .workflow-node.trigger { animation-delay: 0.2s; }
+                .workflow-node.filter { animation-delay: 1.0s; }
+                .workflow-node.ai { animation-delay: 1.8s; }
+                .workflow-node.action { animation-delay: 2.6s; }
+                .workflow-line {
+                  width: 80px;
+                  height: 6px;
+                  background: linear-gradient(90deg, #60a5fa 0%, #a78bfa 100%);
+                  border-radius: 3px;
+                  margin: 0 8px;
+                  opacity: 0;
+                  transform: scaleX(0);
+                  animation: lineDraw 0.5s forwards;
+                }
+                .workflow-line.line1 { animation-delay: 0.7s; }
+                .workflow-line.line2 { animation-delay: 1.5s; }
+                .workflow-line.line3 { animation-delay: 2.3s; }
+                @keyframes nodeAppear {
+                  to {
+                    opacity: 1;
+                    transform: translateY(0) scale(1);
+                  }
+                }
+                @keyframes lineDraw {
+                  to {
+                    opacity: 1;
+                    transform: scaleX(1);
+                  }
+                }
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap');
         
         body { font-family: 'Inter', sans-serif; }
@@ -685,6 +758,17 @@ export default function App() {
           border-radius: 12px;
           padding: 20px;
           text-align: center;
+          transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.25s cubic-bezier(0.22,1,0.36,1);
+        }
+        .tool-card-link:hover, .tool-card:hover, .two-column.tiled > a:hover > div, .two-column.tiled > div:hover {
+          transform: translateY(-10px) scale(1.04);
+          box-shadow: 0 12px 32px 0 rgba(59,130,246,0.18), 0 2px 8px 0 rgba(0,0,0,0.10);
+          z-index: 2;
+        }
+        .tool-card-link {
+          text-decoration: none;
+          color: inherit;
+          display: block;
         }
         .tool-card h4 { color: #60a5fa; font-size: 20px; margin: 10px 0; }
         .tool-card p { font-size: 14px; color: #cbd5e1; }
@@ -709,10 +793,12 @@ export default function App() {
         <div className="relative z-10 w-full h-full flex items-center justify-center animate-fadeIn">
           {slides[currentSlide]}
         </div>
+        </div>
 
         {/* Slide Counter */}
         <div className="absolute bottom-6 right-8 text-slate-500 font-mono text-sm z-20">
-          {currentSlide + 1} / {totalSlides}
+            {currentSlide + 1} / {totalSlides}
+          </div>
         </div>
 
         {/* Navigation Buttons (Visible on hover/focus) */}
@@ -735,6 +821,22 @@ export default function App() {
           className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-blue-600 to-violet-600 transition-all duration-300 z-20"
           style={{ width: `${((currentSlide + 1) / totalSlides) * 100}%` }}
         ></div>
+          <style>{`
+            /* Slide up animation for all slide content */
+            .slide-up-animate {
+              animation: slideUpEntry 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+            }
+            @keyframes slideUpEntry {
+              from {
+                opacity: 0;
+                transform: translateY(60px) scale(0.98);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+              }
+            }
+          `}</style>
       </div>
     </div>
   );
