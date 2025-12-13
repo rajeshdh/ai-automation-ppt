@@ -21,9 +21,62 @@ import {
   FileCheck,
 } from "lucide-react";
 
+export const speakerNotes = [
+  // Slide 1: Title
+  "Good morning everyone. Welcome to this session on Automation Workflows for Research Work. My name is Rajesh Dhiman. Today we will talk about simple computer helpers that can reduce the time you spend on reading, writing, formatting, and tracking research work. This session is practical and meant for your daily academic work, not industry or business use.",
+
+  // Slide 2: Daily Research Problems
+  "Let us start with problems you already face every day. Writing drafts takes a lot of time. Formatting equations is slow and frustrating. Rewriting text to avoid plagiarism creates stress. Tracking papers, deadlines, and funding calls is mostly manual. These problems are common across departments, and today we will see how simple tools can help.",
+
+  // Slide 3: What Do We Mean by Automation
+  "When I say automation, I do not mean complex systems. Think of it as a computer helper. This helper notices new information, follows a few rules, and repeats boring work for you. The goal is not to replace thinking, but to reduce effort so you can focus on research and teaching.",
+
+  // Slide 4: How Researchers Already Use Automation
+  "You are already using automation without calling it automation. Reference managers, spell checkers, citation tools, and equation editors are all helpers. Today we are only extending this idea. Instead of one tool doing one task, we connect multiple helpers together.",
+
+  // Slide 5: Workflow Tools
+  "Workflow tools help connect helpers together. Zapier is simple and good for basic tasks with very little setup. n8n gives more control and can run on university servers, which is important for privacy. Both allow you to design workflows visually, without heavy coding.",
+
+  // Slide 6: Tools for Reading and Writing Papers
+  "These tools help with reading and writing research papers. Consensus helps you find real papers. Scite shows how citations are used. Jenni helps expand drafts with references. Paperpal improves academic language. These tools support your work, but you remain the author.",
+
+  // Slide 7: Use Case 1 Introduction
+  "Now let us look at a real use case. Literature review is time-consuming. Many of us read dozens of abstracts daily. This example shows how a helper can reduce that effort while keeping you informed.",
+
+  // Slide 8: Literature Review Workflow
+  "Here is the workflow step by step. First, a new paper appears on a research website. Second, the system checks if it matches your keywords. Third, a short summary is created. Finally, the summary is stored and sent to you. You decide later whether to read the full paper.",
+
+  // Slide 9: Safe Writing with Assistance
+  "Many people worry about plagiarism. The safe approach is grounding, drafting, and polishing. First, collect facts from real papers. Second, expand your ideas with writing tools. Third, improve language. Always review and rewrite before submitting. The responsibility stays with you.",
+
+  // Slide 10: Writing Mathematical Equations
+  "For mathematics, these tools help with formatting, not thinking. You can convert text to LaTeX, clean equation structure, and explain formulas step by step. This saves time and reduces formatting errors.",
+
+  // Slide 11: Tracking Opportunities
+  "Funding and deadlines are critical. Instead of checking many websites manually, a helper can visit them regularly, extract key details, and send you a summary. This reduces the risk of missing important opportunities.",
+
+  // Slide 12: Asking Questions to Your Data
+  "Instead of complex formulas, you can ask questions in simple English. Upload your data, ask a clear question, and get charts or summaries. This is helpful for quick analysis and early exploration of data.",
+
+  // Slide 13: Asking Clear Questions
+  "Clear instructions give better results. Vague requests create confusion. When you give structure, length, and style, the output improves. This is useful not only for tools, but also for student instructions and assignments.",
+
+  // Slide 14: Responsible Use
+  "These tools are helpers, not decision makers. Always check facts. Review all outputs. Follow journal and university guidelines. Do not upload sensitive or private data. Responsible use is essential in academic environments.",
+
+  // Slide 15: Manual vs Assisted Workflow
+  "This table compares manual and assisted work. The goal is not speed alone, but accuracy and reduced mental load. Assisted workflows help you reach the same academic standards with less repetitive effort.",
+
+  // Slide 16: What Changes for Researchers
+  "With helpers, administrative work reduces, publishing becomes faster, and citation accuracy improves. The quality of thinking does not change, but the effort around it reduces.",
+
+  // Slide 17: Hands-on Session
+  "Next, we will move to a hands-on session. We will build a simple workflow together using visual tools. No coding is required. The goal is to show that these ideas are practical and usable in your daily academic work.",
+];
+
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 15;
+  const totalSlides = 17;
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % totalSlides);
@@ -51,43 +104,28 @@ export default function App() {
     // Slide 1: Title
     <div className="title-layout w-full max-w-4xl text-center">
       <div className="tagline">Expert Workshop | Chandigarh University</div>
-      <h1>
-        Intro to AI & <span className="gradient-text">Automation</span>
-      </h1>
-      <p className="subtitle">Practical Tools to Speed Up Research & Writing</p>
+      <h1>Automation Workflows for Research Work</h1>
+      <p className="subtitle">
+        Simple Tools to Reduce Writing, Reading, and Formatting Effort
+      </p>
       <div className="mt-10 border-t border-slate-700 pt-5 inline-block">
-        <p className="text-xl text-white font-bold m-0">
-          Presented by Rajesh Dhiman
+        <p className="text-xl text-white font-bold m-0">Rajesh Dhiman</p>
+        <p className="text-sm text-slate-400 mt-1">
+          Automation Engineer | Eunix Tech
         </p>
-        <p className="text-sm text-slate-400 mt-1">Tech Consultant & Mentor</p>
       </div>
     </div>,
 
     // Slide 2: The Problem
     <div className="w-full">
-      <h2 className="slide-title">Why use AI? The "Manual" Struggle</h2>
+      <h2 className="slide-title">Daily Research Problems</h2>
       <div className="two-column">
         <div>
-          <p>
-            Research is 10% discovery and 90% administration. We want to flip
-            that.
-          </p>
           <ul className="tech-list mt-8">
-            <li>
-              <strong>Writer's Block:</strong> Staring at a blank page for
-              hours.
-            </li>
-            <li>
-              <strong>Plagiarism Anxiety:</strong> Fear of accidentally copying
-              or mis-citing.
-            </li>
-            <li>
-              <strong>Citation Chaos:</strong> Manually formatting
-              bibliographies.
-            </li>
-            <li>
-              <strong>Missed Opportunities:</strong> Forgetting grant deadlines.
-            </li>
+            <li>Writing drafts takes too much time</li>
+            <li>Formatting equations is slow</li>
+            <li>Rewriting to avoid plagiarism is stressful</li>
+            <li>Tracking papers and deadlines is manual</li>
           </ul>
         </div>
         <div className="image-wrapper">
@@ -101,124 +139,110 @@ export default function App() {
 
     // Slide 3: Concept
     <div className="w-full">
-      <h2 className="slide-title">What is Automation?</h2>
+      <h2 className="slide-title">What Do We Mean by Automation?</h2>
       <div className="two-column gap-24">
         <div className="text-center text-blue-500 flex justify-center">
           <UserCog size={120} strokeWidth={1} />
         </div>
         <div>
           <h3 className="mb-5 text-2xl text-white">
-            Think of it as a "Digital Intern"
+            Think of it as a "Computer Helper"
           </h3>
-          <p>Automation isn't about robots taking over.</p>
-          <p>It's about setting up a digital helper that:</p>
+          <p>Automation is about simple computer helpers for your work.</p>
+          <p>It's about setting up a helper that:</p>
           <ol className="list-decimal list-inside text-slate-300 text-xl leading-relaxed mt-5 pl-4">
-            <li>
-              <strong>Watches</strong> for something (like a new email).
-            </li>
-            <li>
-              <strong>Thinks</strong> about it (checks if it's important).
-            </li>
-            <li>
-              <strong>Acts</strong> on it (saves it to your folder).
-            </li>
+            <li>Notices new information</li>
+            <li>Follows simple rules</li>
+            <li>Repeats work for you</li>
           </ol>
-          <p className="mt-5 text-emerald-500 font-semibold">
-            It works 24/7 so you don't have to.
-          </p>
         </div>
       </div>
     </div>,
 
-    // Slide 4: Connectors
+    // Slide 4: How Researchers Already Use Automation
     <div className="w-full">
-      <h2 className="slide-title">The "Connecting" Tools</h2>
+      <h2 className="slide-title">How Researchers Already Use Automation</h2>
+      <ul className="tech-list mt-8">
+        <li>Reference managers</li>
+        <li>Spell checkers</li>
+        <li>Citation tools</li>
+        <li>Equation editors</li>
+      </ul>
+      <p className="mt-6 text-slate-400 text-lg">
+        These are all simple helpers you already know.
+      </p>
+    </div>,
+
+    // Slide 5: Workflow Tools
+    <div className="w-full">
+      <h2 className="slide-title">Workflow Tools</h2>
       <div className="two-column tiled">
         <div>
           <h3 className="text-red-300">Zapier</h3>
-          <p>
-            <strong>The "Easy Button"</strong>
-          </p>
+          <p>Good for simple tasks, no setup</p>
           <ul className="tech-list mt-5">
             <li>Connects Gmail to Slack, or Forms to Excel.</li>
-            <li>No coding required. Very visual.</li>
-            <li>Good for simple "If this, then that" tasks.</li>
+            <li>No coding required. Visual interface.</li>
+            <li>Simple "If this, then that" tasks.</li>
           </ul>
         </div>
         <div>
           <h3 className="text-blue-400">n8n</h3>
-          <p>
-            <strong>The "Power User" Choice</strong>
-          </p>
+          <p>Good for research data, more control</p>
           <ul className="tech-list mt-5">
             <li>Free and private (can run on University servers).</li>
-            <li>Handles complex research data securely.</li>
-            <li>We will use this for advanced workflows.</li>
+            <li>Handles research data with more options.</li>
+            <li>Useful for advanced workflows.</li>
           </ul>
         </div>
       </div>
     </div>,
 
-    // Slide 5: The Toolkit
+    // Slide 6: Tools for Reading and Writing Papers
     <div className="w-full">
-      <h2 className="slide-title">The "Thinking" Tools (Research AI)</h2>
-      <p className="mb-8 text-left w-full text-slate-300">
-        Forget generic ChatGPT. These tools are built for researchers.
-      </p>
+      <h2 className="slide-title">Tools for Reading and Writing Papers</h2>
       <div className="tool-grid">
         <div className="tool-card">
           <div className="flex justify-center mb-4">
             <Quote size={30} className="text-violet-500" />
           </div>
           <h4>Consensus</h4>
-          <p>
-            AI Search Engine that <strong>only</strong> uses real academic
-            papers. No hallucinations.
-          </p>
+          <p>Helps find real papers</p>
         </div>
         <div className="tool-card">
           <div className="flex justify-center mb-4">
             <CheckCheck size={30} className="text-emerald-500" />
           </div>
           <h4>Scite.ai</h4>
-          <p>
-            Checks if citations support or contrast your claim. Smart
-            validation.
-          </p>
+          <p>Checks citation meaning</p>
         </div>
         <div className="tool-card">
           <div className="flex justify-center mb-4">
             <PenTool size={30} className="text-amber-500" />
           </div>
-          <h4>Jenni AI</h4>
-          <p>
-            Auto-complete for academic writing. Suggests text{" "}
-            <strong>with citations</strong>.
-          </p>
+          <h4>Jenni</h4>
+          <p>Helps expand drafts</p>
         </div>
         <div className="tool-card">
           <div className="flex justify-center mb-4">
             <Languages size={30} className="text-red-500" />
           </div>
           <h4>Paperpal</h4>
-          <p>
-            Grammar and academic tone checker. Pre-submission "plagiarism"
-            guard.
-          </p>
+          <p>Improves academic language</p>
         </div>
       </div>
     </div>,
 
-    // Slide 6: Use Case 1 Title
+    // Slide 7: Use Case 1 Title
     <div className="title-layout w-full max-w-4xl text-center">
       <div className="tagline">Use Case 01</div>
-      <h1>The "Smart" Literature Review</h1>
+      <h1>Example 1: Literature Review Helper</h1>
       <p className="subtitle">
         How to stay updated without reading 100 abstracts/day
       </p>
     </div>,
 
-    // Slide 7: Use Case 1 Steps
+    // Slide 8: Use Case 1 Steps
     <div className="w-full">
       <h2 className="slide-title">Workflow: New Paper Alert System</h2>
       <div className="timeline-layout">
@@ -228,11 +252,8 @@ export default function App() {
             <Zap size={14} className="text-blue-500" />
           </div>
           <div className="timeline-content">
-            <h3>1. Trigger</h3>
-            <p>
-              RSS Feed detects new paper on ArXiv/PubMed with tag "Machine
-              Learning".
-            </p>
+            <h3>1. New paper appears</h3>
+            <p>System detects a new paper on ArXiv or PubMed.</p>
           </div>
         </div>
         <div className="timeline-item">
@@ -241,10 +262,7 @@ export default function App() {
           </div>
           <div className="timeline-content">
             <h3>2. Filter</h3>
-            <p>
-              n8n checks if abstract contains specific keywords (e.g.,
-              "Transformer").
-            </p>
+            <p>Checks if abstract contains your keywords.</p>
           </div>
         </div>
         <div className="timeline-item">
@@ -252,8 +270,8 @@ export default function App() {
             <Bot size={14} className="text-blue-500" />
           </div>
           <div className="timeline-content">
-            <h3>3. Analyze</h3>
-            <p>Send abstract to AI to generate a 3-bullet summary.</p>
+            <h3>3. Create short summary</h3>
+            <p>Assistant tool makes a 3-bullet summary.</p>
           </div>
         </div>
         <div className="timeline-item">
@@ -262,38 +280,41 @@ export default function App() {
           </div>
           <div className="timeline-content">
             <h3>4. Store</h3>
-            <p>Add to Zotero collection and email you the summary.</p>
+            <p>Adds to your collection and sends you the summary.</p>
           </div>
         </div>
       </div>
     </div>,
 
-    // Slide 8: Use Case 2
+    // Slide 9: Safe Writing with Assistance
     <div className="w-full">
-      <h2 className="slide-title">Use Case 02: Plagiarism-Free Writing</h2>
+      <h2 className="slide-title">Safe Writing with Assistance</h2>
       <div className="two-column">
         <div>
-          <h3>The "Safe" Writing Workflow</h3>
-          <p>How to use AI without cheating or plagiarism.</p>
+          <h3>Writing with Assisted Tools</h3>
+          <p>How to use smart tools without plagiarism.</p>
           <div className="mt-5">
             <ul className="tech-list">
               <li className="text-white">
                 <strong>Step 1: Grounding.</strong> Use <em>Consensus</em> to
-                find facts backed by real papers.
+                find facts from real papers.
               </li>
               <li className="text-white">
-                <strong>Step 2: Drafting.</strong> Use <em>Jenni AI</em> to
-                expand your bullets. It cites as it writes.
+                <strong>Step 2: Drafting.</strong> Use <em>Jenni</em> to expand
+                your points. It adds citations.
               </li>
               <li className="text-white">
-                <strong>Step 3: Polishing.</strong> Use <em>Paperpal</em> to fix
-                grammar and check tone.
+                <strong>Step 3: Polishing.</strong> Use <em>Paperpal</em> to
+                improve grammar and language.
               </li>
             </ul>
           </div>
           <p className="mt-5 text-lg text-violet-500 font-semibold">
-            <strong>Result:</strong> Original text, proper citations, 2x faster
-            speed.
+            <strong>Result:</strong> Original text, proper citations, faster
+            writing.
+          </p>
+          <p className="mt-3 text-red-400 font-semibold">
+            Always review and rewrite before submission.
           </p>
         </div>
         <div className="image-wrapper">
@@ -305,9 +326,22 @@ export default function App() {
       </div>
     </div>,
 
-    // Slide 9: Use Case 3
+    // Slide 10: Writing Mathematical Equations
     <div className="w-full">
-      <h2 className="slide-title">Use Case 03: Grant Funding Tracker</h2>
+      <h2 className="slide-title">Writing Mathematical Equations</h2>
+      <ul className="tech-list mt-8">
+        <li>Convert text to LaTeX</li>
+        <li>Clean equation formatting</li>
+        <li>Explain formulas in steps</li>
+      </ul>
+      <p className="mt-6 text-slate-400 text-lg">
+        Tool helps with format, not ideas.
+      </p>
+    </div>,
+
+    // Slide 11: Tracking Opportunities Automatically
+    <div className="w-full">
+      <h2 className="slide-title">Tracking Opportunities Automatically</h2>
       <div className="two-column rounded-layout items-center">
         <div className="text-center">
           <img
@@ -319,20 +353,19 @@ export default function App() {
         <div>
           <h3>Never Miss a Deadline</h3>
           <p>
-            Funding is the lifeblood of research. Manually checking 50+ grant
-            portals is inefficient.
+            Funding is important for research. Checking many grant websites by
+            hand is slow.
           </p>
           <ul className="tech-list mt-5">
             <li>
-              <strong>Scrape:</strong> Automated bot visits grant websites
-              weekly.
+              <strong>Check websites:</strong> Tool visits grant sites weekly.
             </li>
             <li>
-              <strong>Extract:</strong> Pulls out "Deadline", "Eligibility", and
+              <strong>Extract:</strong> Gets "Deadline", "Eligibility", and
               "Amount".
             </li>
             <li>
-              <strong>Notify:</strong> Sends a digest email to the Department
+              <strong>Notify:</strong> Sends a summary email to the Department
               Head.
             </li>
           </ul>
@@ -340,15 +373,14 @@ export default function App() {
       </div>
     </div>,
 
-    // Slide 10: Data Analysis
+    // Slide 12: Asking Questions to Your Data
     <div className="w-full">
-      <h2 className="slide-title">Conversational Data Analysis</h2>
+      <h2 className="slide-title">Asking Questions to Your Data</h2>
       <div className="two-column">
         <div>
           <p>
-            Move beyond painful Excel formulas. Use tools like{" "}
-            <strong>Julius AI</strong> or{" "}
-            <strong>ChatGPT Advanced Data Analysis</strong>.
+            Move beyond difficult Excel formulas. Use assistant tools like{" "}
+            <strong>Julius</strong> or similar helpers.
           </p>
           <h3 className="mt-8 text-2xl text-blue-400">How it works:</h3>
           <ol className="mt-4 list-decimal list-inside leading-loose text-slate-300 text-lg">
@@ -361,7 +393,7 @@ export default function App() {
               between Age and Recovery Time."
             </li>
             <li>
-              <strong>Get</strong> a publication-ready chart instantly.
+              <strong>Get</strong> a publication-ready chart quickly.
             </li>
           </ol>
         </div>
@@ -374,15 +406,15 @@ export default function App() {
       </div>
     </div>,
 
-    // Slide 11: Prompt Engineering
+    // Slide 13: How to Ask Clear Questions
     <div className="w-full">
-      <h2 className="slide-title">Prompt Engineering 101</h2>
+      <h2 className="slide-title">How to Ask Clear Questions</h2>
       <div className="two-column">
         <div>
-          <h3>The "R-C-O" Framework</h3>
+          <h3>Clear Instruction Method</h3>
           <p>
-            Garbage in, garbage out. To get good research output, you must
-            structure your prompt.
+            Clear instructions give better results. For good research output, be
+            specific with your request.
           </p>
           <div className="bg-slate-800 p-6 rounded-lg mt-5 border border-slate-700">
             <p className="text-red-300 mb-4 flex items-center gap-2">
@@ -392,11 +424,8 @@ export default function App() {
             <p className="text-emerald-400 flex items-start gap-2">
               <CheckCheck size={18} className="mt-1 flex-shrink-0" />{" "}
               <span>
-                <strong>Good:</strong> "Act as a Senior Editor{" "}
-                <strong>[Role]</strong>. Based on these 3 bullet points{" "}
-                <strong>[Context]</strong>, write a 200-word abstract{" "}
-                <strong>[Task]</strong> using active voice{" "}
-                <strong>[Constraint]</strong>."
+                <strong>Good:</strong> "Please use these 3 bullet points to
+                write a 200-word abstract in active voice."
               </span>
             </p>
           </div>
@@ -410,27 +439,27 @@ export default function App() {
       </div>
     </div>,
 
-    // Slide 12: Ethics
+    // Slide 14: Responsible Use
     <div className="w-full">
-      <h2 className="slide-title">The "Responsible AI" Checklist</h2>
+      <h2 className="slide-title">Responsible Use</h2>
       <div className="two-column">
         <div>
           <ul className="tech-list mt-5">
             <li className="mb-6">
-              <strong>Verify Everything:</strong> AI can "hallucinate" facts.
-              Always cross-check with original sources (using tools like Scite).
+              <strong>Check all facts:</strong> Assisted tools can make
+              mistakes. Always check with real sources.
             </li>
             <li className="mb-6">
-              <strong>Human in the Loop:</strong> Never copy-paste directly into
-              a submission. You are the author; AI is just the drafter.
+              <strong>Review before submitting:</strong> Do not copy-paste
+              results directly. Make sure your own ideas are clear.
             </li>
             <li className="mb-6">
-              <strong>Disclose Usage:</strong> Check your journal's policy. Many
-              require a statement: "AI was used for language editing."
+              <strong>Say if you used a tool:</strong> Some journals want you to
+              mention if a tool helped with writing.
             </li>
             <li className="mb-6">
-              <strong>Data Privacy:</strong> Do not upload sensitive patient
-              data or unpublished IP to public AI models.
+              <strong>Protect data:</strong> Do not upload private or sensitive
+              data to public tools.
             </li>
           </ul>
         </div>
@@ -444,9 +473,9 @@ export default function App() {
       </div>
     </div>,
 
-    // Slide 13: Comparison
+    // Slide 15: Comparison
     <div className="w-full">
-      <h2 className="slide-title">Manual vs. AI Assisted</h2>
+      <h2 className="slide-title">Manual vs. Assisted Workflow</h2>
       <table className="w-full mt-5 border-collapse">
         <thead>
           <tr>
@@ -457,7 +486,7 @@ export default function App() {
               Manual Process
             </th>
             <th className="bg-slate-800 text-white p-4 text-left font-semibold border-b-2 border-blue-500">
-              AI Workflow
+              Assisted Workflow
             </th>
           </tr>
         </thead>
@@ -481,7 +510,7 @@ export default function App() {
               High effort, blank page syndrome
             </td>
             <td className="p-4 border-b border-slate-700 text-slate-300 font-semibold text-emerald-400">
-              Jenni AI (Co-writer with citations)
+              Jenni (Co-writer with citations)
             </td>
           </tr>
           <tr>
@@ -492,7 +521,7 @@ export default function App() {
               Writing complex Python/R code
             </td>
             <td className="p-4 border-b border-slate-700 text-slate-300 font-semibold text-emerald-400">
-              Julius AI (Conversational)
+              Julius (Conversational)
             </td>
           </tr>
           <tr>
@@ -506,9 +535,9 @@ export default function App() {
       </table>
     </div>,
 
-    // Slide 14: Impact
+    // Slide 16: What Changes for Researchers
     <div className="w-full">
-      <h2 className="slide-title">The Impact on Research Output</h2>
+      <h2 className="slide-title">What Changes for Researchers</h2>
       <div className="tiled-content text-center">
         <div className="tile bg-transparent border-0 shadow-none">
           <div className="highlight-number text-9xl font-bold text-blue-500 leading-none">
@@ -537,30 +566,12 @@ export default function App() {
       </div>
     </div>,
 
-    // Slide 15: Q&A
+    // Slide 17: Hands-on Session Next
     <div className="title-layout w-full max-w-4xl text-center">
-      <h1 className="text-[80px] mb-5">Let's Build.</h1>
-      <p className="subtitle">I'm here to help you set this up.</p>
+      <h1 className="text-[80px] mb-5">Hands-on Session Next</h1>
+      <p className="subtitle">We will build a simple workflow together</p>
       <div className="mt-10 text-slate-400">
         <p className="text-2xl text-white mb-3">Rajesh Dhiman</p>
-        <p className="flex items-center justify-center gap-2 mb-2">
-          <Globe size={16} />{" "}
-          <a
-            href="https://www.rajeshdhiman.in"
-            className="text-blue-400 no-underline hover:text-blue-300 transition-colors"
-          >
-            www.rajeshdhiman.in
-          </a>
-        </p>
-        <p className="flex items-center justify-center gap-2">
-          <Laptop size={16} />{" "}
-          <a
-            href="https://www.eunix.tech"
-            className="text-blue-400 no-underline hover:text-blue-300 transition-colors"
-          >
-            www.eunix.tech
-          </a>
-        </p>
       </div>
     </div>,
   ];
