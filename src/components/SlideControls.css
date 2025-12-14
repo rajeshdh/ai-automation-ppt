@@ -1,0 +1,94 @@
+/* Navigation Buttons */
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 12px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 20;
+  opacity: 0;
+}
+
+.nav-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  opacity: 1;
+}
+
+.nav-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.nav-button:disabled:hover {
+  background: transparent;
+  color: #64748b;
+}
+
+.slide-container:hover .nav-button {
+  opacity: 1;
+}
+
+.nav-button-left {
+  left: 16px;
+}
+
+.nav-button-right {
+  right: 16px;
+}
+
+@media (max-width: 768px) {
+  .nav-button {
+    opacity: 1;
+    padding: 8px;
+  }
+
+  .nav-button-left {
+    left: 8px;
+  }
+
+  .nav-button-right {
+    right: 8px;
+  }
+}
+
+/* Slide Counter */
+.slide-counter {
+  position: absolute;
+  bottom: 24px;
+  right: 32px;
+  color: #64748b;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 14px;
+  z-index: 20;
+}
+
+@media (max-width: 768px) {
+  .slide-counter {
+    bottom: 16px;
+    right: 16px;
+    font-size: 12px;
+  }
+}
+
+/* Progress Bar */
+.progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+  transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 20;
+}
+
+@media (max-width: 768px) {
+  .progress-bar {
+    height: 3px;
+  }
+}
