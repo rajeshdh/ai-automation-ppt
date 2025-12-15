@@ -1281,7 +1281,7 @@ export default function AIWorkshopApp() {
         </div>
         <div className="flex items-center gap-4">
           <a
-            href="https://github.com/dhimanrajesh/ai-workshop-app"
+            href="https://github.com/rajeshdh/ai-automation-ppt"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 text-sm font-semibold"
