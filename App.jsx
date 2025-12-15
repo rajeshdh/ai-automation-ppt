@@ -32,6 +32,7 @@ import {
   Calendar,
   FileSpreadsheet,
   Slack,
+  Github,
 } from "lucide-react";
 
 // --- API Helpers (Preserved) ---
@@ -505,44 +506,42 @@ export default function AIWorkshopApp() {
     {
       title: "The Vision",
       id: "welcome",
-      notes:
-        "SCRIPT: 'Good morning. I’m not here to teach you how to code. I’m here to give you your life back. \nRight now, you are doing work that a machine could do in seconds. By the end of this hour, you will have two digital assistants doing that work for you.'",
+      notes: "",
     },
     {
       title: "Your Guide",
       id: "instructor",
-      notes:
-        "SCRIPT: 'I’m Rajesh Dhiman, an AI Engineer & Automation Architect with 12+ years building AI agents, voice bots, and n8n workflows for teams in India, the US, and Singapore. \nMy goal today is simple: take you from confused to builder in 60 minutes.'",
+      notes: "",
     },
     {
       title: "The Villain",
       id: "problem",
       notes:
-        "SCRIPT: 'Let’s talk about the trap: we lose hours to cleanup and copy-paste. That’s not why we’re here. Today we’ll fix that.'",
+        "SCRIPT: 'We lose hours to cleanup and copy-paste. That’s not why we’re here. Today we’ll fix that.'",
     },
     {
       title: "The Insight",
       id: "analogy",
       notes:
-        "SCRIPT: 'Automation is not magic. It is just a Kitchen. \n1. The Recipe (Workflow): The list of instructions.\n2. The Order (Trigger): Nothing cooks until the ticket arrives.\n3. The Chef (Node): One cuts, one cooks. \nIf you can understand a sandwich shop, you can understand AI.'",
+        "SCRIPT: 'Automation is a kitchen: Recipe = workflow, Order = trigger, Station = node. If you get a sandwich shop, you get this.'",
     },
     {
       title: "The Triggers",
       id: "trigger-gallery",
       notes:
-        "SCRIPT: 'So, what starts the kitchen? Today we will use a Chat Button. But in real life, you can trigger automation with almost anything. \nAn Email arriving. A Calendar Event. A Google Form submission. \nThis is the difference between a Tool (Chat) and a System (Automation).'",
+        "SCRIPT: 'Today we use a chat button. In real life you can trigger with email, calendar, or forms. That’s the jump from a tool to a system.'",
     },
     {
       title: "Example 1: Math",
       id: "math-intro",
       notes:
-        "SCRIPT: 'Let’s crush the first enemy: LaTeX formulas. \nWatch this. I don’t write code. I just tell the AI what I want in plain English. \n[Click Run]. \nBoom. Done.'",
+        "SCRIPT: 'Quick win: I type plain English, it returns LaTeX. No code, just a prompt. [Click Run].'",
     },
     {
       title: "Build Phase 1",
       id: "math-build",
       notes:
-        "SCRIPT: 'Open your laptops. We are building this right now. \n1. Grab the 'Chat Trigger' (The Order Ticket).\n2. Grab the 'LLM Chain' (The Chef).\n3. Copy this instruction. Do not type it. Trust the recipe.'",
+        "SCRIPT: 'Open laptops. Add Chat Trigger. Add LLM Chain. Connect them. Paste the instruction. Done.'",
     },
     {
       title: "The Rules",
@@ -1280,8 +1279,20 @@ export default function AIWorkshopApp() {
           </div>
           AI Automation Workflows
         </div>
-        <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">
-          Slide {step + 1} / {steps.length}
+        <div className="flex items-center gap-4">
+          <a
+            href="https://github.com/dhimanrajesh/ai-workshop-app"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 text-slate-600 hover:text-slate-900 text-sm font-semibold"
+            title="View the code on GitHub"
+          >
+            <Github size={18} />
+            Code
+          </a>
+          <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">
+            Slide {step + 1} / {steps.length}
+          </div>
         </div>
       </header>
 
