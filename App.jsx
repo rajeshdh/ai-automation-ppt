@@ -518,7 +518,7 @@ export default function AIWorkshopApp() {
       title: "The Villain",
       id: "problem",
       notes:
-        "SCRIPT: 'Let’s talk about the villain in the room: The Productivity Trap. \nYou were hired for your brain, but you spend 40% of your day acting like a photocopier. \nFormatting citations? Copying Excel rows? That is not research. That is waste.'",
+        "SCRIPT: 'Let’s talk about the trap: we lose hours to cleanup and copy-paste. That’s not why we’re here. Today we’ll fix that.'",
     },
     {
       title: "The Insight",
@@ -572,7 +572,7 @@ export default function AIWorkshopApp() {
       title: "The Vision",
       id: "summary",
       notes:
-        "SCRIPT: 'You walked in here doing everything manually. \nYou are walking out as Automation Engineers. \nYou have the recipe. You have the tools. The boring work is officially optional.'",
+        "SCRIPT: 'You came in doing this manually. Now you have two starter tools and a playbook. Use them on one real task this week.'",
     },
     {
       title: "Feedback",
@@ -593,21 +593,18 @@ export default function AIWorkshopApp() {
         <Brain size={56} className="text-white" />
       </div>
       <h1 className="text-5xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight leading-tight">
-        Automate the <br />
-        <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-          Boring Stuff.
-        </span>
+        Let&apos;s stop burning time on busywork.
       </h1>
       <p className="text-lg md:text-xl text-slate-600 mb-8 font-medium max-w-2xl leading-relaxed">
-        Stop acting like a robot. Start building them. <br />A masterclass for
-        researchers who value their time.
+        We&apos;ll let AI handle the repetitive parts so you can focus on the
+        work that matters.
       </p>
       <Button
         onClick={nextStep}
         variant="magic"
         className="px-8 py-4 text-lg shadow-indigo-500/30"
       >
-        Start The Revolution <ArrowRight size={20} />
+        Let&apos;s get started <ArrowRight size={20} />
       </Button>
     </div>
   );
@@ -629,8 +626,8 @@ export default function AIWorkshopApp() {
         {[
           "AI Agents & Voice Bots",
           "n8n Workflows",
-          "Automation Architecture",
-          "Global Delivery (IN / US / SG)",
+          "Automation architecture",
+          "Built for teams in IN / US / SG",
         ].map((skill, i) => (
           <div
             key={i}
@@ -699,15 +696,15 @@ export default function AIWorkshopApp() {
           <span className="text-red-600">Trap.</span>
         </h2>
         <p className="text-lg text-slate-600 mb-6 font-light leading-relaxed">
-          You spend <strong className="text-slate-900">40% of your week</strong>{" "}
-          on tasks that require zero intelligence.
+          We lose hours every week to cleanup and copy-paste. That’s not the
+          work we were supposed to do.
         </p>
         <div className="space-y-3">
           {[
-            "Extracting PDF highlights into usable notes",
-            "Cleaning CSV/Excel headers, dates, and duplicates",
-            "Triage papers: skim abstracts, de-dupe, track reads",
-            "Drafting routine updates and follow-up emails",
+            "Pulling highlights from PDFs just to make a summary",
+            "Cleaning messy CSVs (dates, headers, dupes) again",
+            "Skimming abstracts to decide ‘read or skip’ and track it",
+            "Rewriting the same updates and follow-ups",
           ].map((item, i) => (
             <div
               key={i}
@@ -723,13 +720,13 @@ export default function AIWorkshopApp() {
       </div>
       <div className="bg-slate-100 rounded-3xl p-8 text-center border-2 border-slate-200/50 flex flex-col items-center justify-center h-[300px] lg:h-[350px]">
         <h3 className="text-slate-400 font-bold uppercase tracking-widest mb-3 text-xs">
-          The Goal
+          Today
         </h3>
         <div className="text-7xl md:text-8xl font-black text-blue-600 mb-3">
           2
         </div>
         <p className="text-xl md:text-2xl font-bold text-slate-800">
-          Automated Assistants
+          Small helpers
         </p>
         <p className="text-slate-500 mt-2 text-sm">Built by you. Today.</p>
       </div>
@@ -978,10 +975,11 @@ export default function AIWorkshopApp() {
       <div className="bg-slate-50 p-6 rounded-2xl border border-slate-200 h-auto self-start">
         <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
           <Terminal size={20} className="text-blue-600" />
-          The Instruction Card
+          The instruction (system prompt)
         </h3>
         <p className="text-slate-600 mb-2 font-medium text-sm">
-          Double click the <strong>Brain Node</strong>. Paste this exact logic:
+          Open the <strong>Brain Node</strong> and paste this into the prompt
+          box:
         </p>
 
         <CopyBox text="You are a helpful academic assistant. I will give you a mathematical description in plain English. You must convert it into valid LaTeX code. Do not explain it, just give me the code." />
@@ -1136,40 +1134,43 @@ export default function AIWorkshopApp() {
   const SummaryScreen = () => (
     <div className="max-w-3xl mx-auto text-center h-full flex flex-col justify-center pb-8">
       <h2 className="text-5xl font-black text-slate-900 mb-8 tracking-tight">
-        You Are Now <br />
-        <span className="text-blue-600">Builders.</span>
+        What you have now
       </h2>
 
-      <div className="bg-white p-8 rounded-3xl shadow-2xl border border-slate-100 mb-8 text-left transform rotate-1 hover:rotate-0 transition-transform duration-500">
-        <h3 className="font-black text-slate-800 mb-6 text-xl uppercase tracking-widest border-b pb-4">
-          Inventory
+      <div className="bg-white p-8 rounded-3xl shadow-2xl border border-slate-100 mb-8 text-left">
+        <h3 className="font-black text-slate-800 mb-4 text-xl uppercase tracking-widest border-b pb-3">
+          Takeaways
         </h3>
         <ul className="space-y-3">
-          <li className="flex items-center gap-4 group">
-            <div className="bg-green-100 text-green-600 p-1.5 rounded-lg group-hover:scale-110 transition-transform">
+          <li className="flex items-center gap-4">
+            <div className="bg-green-100 text-green-600 p-1.5 rounded-lg">
               <Check size={18} />
             </div>
             <span className="text-lg text-slate-700 font-medium">
-              The <strong>Strategy</strong> (Workflow Thinking)
+              Workflow thinking you can reuse
             </span>
           </li>
-          <li className="flex items-center gap-4 group">
-            <div className="bg-green-100 text-green-600 p-1.5 rounded-lg group-hover:scale-110 transition-transform">
+          <li className="flex items-center gap-4">
+            <div className="bg-green-100 text-green-600 p-1.5 rounded-lg">
               <Check size={18} />
             </div>
             <span className="text-lg text-slate-700 font-medium">
-              The <strong>Math Translator</strong>
+              A starter math translator helper
             </span>
           </li>
-          <li className="flex items-center gap-4 group">
-            <div className="bg-green-100 text-green-600 p-1.5 rounded-lg group-hover:scale-110 transition-transform">
+          <li className="flex items-center gap-4">
+            <div className="bg-green-100 text-green-600 p-1.5 rounded-lg">
               <Check size={18} />
             </div>
             <span className="text-lg text-slate-700 font-medium">
-              The <strong>Writing Assistant</strong>
+              A writing assistant template
             </span>
           </li>
         </ul>
+        <p className="text-slate-600 mt-4 text-base">
+          Didn’t finish? Pick one real task this week and test a small piece of
+          it with these helpers.
+        </p>
       </div>
 
       <div className="flex justify-center gap-4">
@@ -1192,16 +1193,23 @@ export default function AIWorkshopApp() {
             How did we do?
           </h2>
           <p className="text-lg text-slate-600 leading-relaxed font-light">
-            If this workshop helped you, snap a picture (screenshot or photo), post your feedback on LinkedIn, and tag me. Have ideas to improve it? Please email{" "}
-            <a href="mailto:rajesh@eunix.tech" className="text-blue-600 underline">
+            If this workshop helped you, snap a picture (screenshot or photo),
+            post your feedback on LinkedIn, and tag me. Have ideas to improve
+            it? Please email{" "}
+            <a
+              href="mailto:rajesh@eunix.tech"
+              className="text-blue-600 underline"
+            >
               rajesh@eunix.tech
-            </a>.
+            </a>
+            .
           </p>
         </div>
 
         <div className="bg-indigo-50 p-6 rounded-3xl border border-indigo-100">
           <h3 className="font-bold text-indigo-900 mb-3 flex items-center gap-3 text-lg">
-            <Gift className="text-indigo-600" size={24} /> Ways to share feedback
+            <Gift className="text-indigo-600" size={24} /> Ways to share
+            feedback
           </h3>
           <ul className="space-y-3 text-slate-700 text-base font-medium">
             <li className="flex items-center gap-3">
@@ -1236,11 +1244,14 @@ export default function AIWorkshopApp() {
         </h3>
         <ol className="text-left text-slate-600 space-y-2 mb-6 text-base bg-slate-50 p-4 rounded-2xl relative z-10 w-full font-medium">
           <li>1. Scan to open LinkedIn.</li>
-          <li>2. Post a photo/screenshot with your feedback.</li>
+          <li>2. Post a quick note or photo with your feedback.</li>
           <li>3. Tag me so I can see it.</li>
           <li>
             4. Or email:{" "}
-            <a href="mailto:rajesh@eunix.tech" className="text-blue-600 underline">
+            <a
+              href="mailto:rajesh@eunix.tech"
+              className="text-blue-600 underline"
+            >
               rajesh@eunix.tech
             </a>
           </li>
@@ -1267,7 +1278,7 @@ export default function AIWorkshopApp() {
           <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-blue-200">
             <Brain size={18} />
           </div>
-          AI WORKSHOP
+          AI Automation Workflows
         </div>
         <div className="text-xs font-bold text-slate-400 uppercase tracking-widest">
           Slide {step + 1} / {steps.length}
